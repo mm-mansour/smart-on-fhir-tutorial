@@ -112,11 +112,12 @@
         typeof ob.valueQuantity != 'undefined' &&
         typeof ob.valueQuantity.value != 'undefined' &&
         typeof ob.valueQuantity.unit != 'undefined') {
-          return ob.valueQuantity.value + ' ' + ob.valueQuantity.unit;
+          return Math.round(ob.valueQuantity.value * 100) / 100 + ' ' + ob.valueQuantity.unit;
     } else {
       return undefined;
     }
   }
+  
 
   window.drawVisualization = function(p) {
     $('#holder').show();
